@@ -1,14 +1,11 @@
 import { Button } from "./ui/button-variants";
 import heroImage from "@/assets/hero-fashion.jpg";
-
 const HeroSection = () => {
-  return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroImage})`
+    }}>
         {/* Overlay */}
         <div className="absolute inset-0 bg-luxury-black/30"></div>
       </div>
@@ -18,12 +15,10 @@ const HeroSection = () => {
         <div className="animate-fade-up">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-playfair font-bold text-luxury-white mb-6 tracking-tight">
             <span className="block">Redefining</span>
-            <span className="text-luxury-accent">Luxury Fashion</span>
+            <span className="text-luxury-accent">Luxury tsirrts</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-luxury-white/90 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
-            Discover timeless elegance with our curated collection of premium clothing and accessories
-          </p>
+          <p className="text-xl sm:text-2xl text-luxury-white/90 mb-8 max-w-2xl mx-auto font-light leading-relaxed">Discover timeless elegance with our curated collection of premium tsirts and accessories</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant="hero" size="xl" className="w-full sm:w-auto">
@@ -43,8 +38,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;

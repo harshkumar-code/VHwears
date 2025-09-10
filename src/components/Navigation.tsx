@@ -2,56 +2,47 @@ import { useState, useEffect } from "react";
 import { Search, ShoppingBag, Menu, X, User } from "lucide-react";
 import { Button } from "./ui/button-variants";
 import { cn } from "@/lib/utils";
-
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navigationItems = [
-    { name: "New Arrivals", href: "#new" },
-    { name: "Women", href: "#women" },
-    { name: "Men", href: "#men" },
-    { name: "Collections", href: "#collections" },
-    { name: "About", href: "#about" },
-  ];
-
-  return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled 
-        ? "bg-luxury-white/95 backdrop-blur-md shadow-soft" 
-        : "bg-transparent"
-    )}>
+  const navigationItems = [{
+    name: "New Arrivals",
+    href: "#new"
+  }, {
+    name: "Women",
+    href: "#women"
+  }, {
+    name: "Men",
+    href: "#men"
+  }, {
+    name: "Collections",
+    href: "#collections"
+  }, {
+    name: "About",
+    href: "#about"
+  }];
+  return <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-luxury-white/95 backdrop-blur-md shadow-soft" : "bg-transparent")}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-luxury-brand text-2xl lg:text-3xl">
-              LUXE
-            </h1>
+            <h1 className="text-luxury-brand text-2xl lg:text-3xl">V&H
+wears</h1>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-luxury-black hover:text-gold transition-colors duration-200 font-medium tracking-wide"
-              >
+            {navigationItems.map(item => <a key={item.name} href={item.href} className="text-luxury-black hover:text-gold transition-colors duration-200 font-medium tracking-wide">
                 {item.name}
-              </a>
-            ))}
+              </a>)}
           </div>
 
           {/* Right Side Icons */}
@@ -72,35 +63,18 @@ const Navigation = () => {
             </Button>
 
             {/* Mobile Menu Button */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="lg:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
+            <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-luxury-white border-t border-gray-200 animate-fade-up">
+        {isMobileMenuOpen && <div className="lg:hidden bg-luxury-white border-t border-gray-200 animate-fade-up">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigationItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-luxury-black hover:text-gold transition-colors duration-200 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
+              {navigationItems.map(item => <a key={item.name} href={item.href} className="block px-3 py-2 text-luxury-black hover:text-gold transition-colors duration-200 font-medium" onClick={() => setIsMobileMenuOpen(false)}>
                   {item.name}
-                </a>
-              ))}
+                </a>)}
               <div className="pt-2 border-t border-gray-200 mt-2">
                 <Button variant="ghost" className="w-full justify-start">
                   <Search className="h-4 w-4 mr-2" />
@@ -108,11 +82,8 @@ const Navigation = () => {
                 </Button>
               </div>
             </div>
-          </div>
-        )}
+          </div>}
       </div>
-    </nav>
-  );
+    </nav>;
 };
-
 export default Navigation;

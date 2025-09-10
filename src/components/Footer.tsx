@@ -1,48 +1,81 @@
 import { Instagram, Facebook, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
-
 const Footer = () => {
   const footerLinks = {
-    company: [
-      { name: "About Us", href: "#about" },
-      { name: "Careers", href: "#careers" },
-      { name: "Press", href: "#press" },
-      { name: "Sustainability", href: "#sustainability" }
-    ],
-    shop: [
-      { name: "Women", href: "#women" },
-      { name: "Men", href: "#men" },
-      { name: "New Arrivals", href: "#new" },
-      { name: "Sale", href: "#sale" }
-    ],
-    support: [
-      { name: "Size Guide", href: "#size-guide" },
-      { name: "Returns", href: "#returns" },
-      { name: "Shipping", href: "#shipping" },
-      { name: "FAQ", href: "#faq" }
-    ],
-    legal: [
-      { name: "Privacy Policy", href: "#privacy" },
-      { name: "Terms of Service", href: "#terms" },
-      { name: "Cookie Policy", href: "#cookies" }
-    ]
+    company: [{
+      name: "About Us",
+      href: "#about"
+    }, {
+      name: "Careers",
+      href: "#careers"
+    }, {
+      name: "Press",
+      href: "#press"
+    }, {
+      name: "Sustainability",
+      href: "#sustainability"
+    }],
+    shop: [{
+      name: "Women",
+      href: "#women"
+    }, {
+      name: "Men",
+      href: "#men"
+    }, {
+      name: "New Arrivals",
+      href: "#new"
+    }, {
+      name: "Sale",
+      href: "#sale"
+    }],
+    support: [{
+      name: "Size Guide",
+      href: "#size-guide"
+    }, {
+      name: "Returns",
+      href: "#returns"
+    }, {
+      name: "Shipping",
+      href: "#shipping"
+    }, {
+      name: "FAQ",
+      href: "#faq"
+    }],
+    legal: [{
+      name: "Privacy Policy",
+      href: "#privacy"
+    }, {
+      name: "Terms of Service",
+      href: "#terms"
+    }, {
+      name: "Cookie Policy",
+      href: "#cookies"
+    }]
   };
-
-  const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Youtube, href: "#", label: "YouTube" }
-  ];
-
-  return (
-    <footer className="bg-luxury-black text-luxury-white">
+  const socialLinks = [{
+    icon: Instagram,
+    href: "#",
+    label: "Instagram"
+  }, {
+    icon: Facebook,
+    href: "#",
+    label: "Facebook"
+  }, {
+    icon: Twitter,
+    href: "#",
+    label: "Twitter"
+  }, {
+    icon: Youtube,
+    href: "#",
+    label: "YouTube"
+  }];
+  return <footer className="bg-luxury-black text-luxury-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-3xl font-playfair font-bold mb-4">LUXE</h3>
+            <h3 className="text-3xl font-playfair font-bold mb-4">V&H</h3>
             <p className="text-luxury-white/80 mb-6 leading-relaxed">
               Redefining luxury fashion with timeless elegance and exceptional craftsmanship. 
               Each piece tells a story of premium quality and sophisticated design.
@@ -56,11 +89,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-gold" />
-                <span className="text-luxury-white/80">+1 (555) 123-4567</span>
+                <span className="text-luxury-white/80">+916394162232</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-gold" />
-                <span className="text-luxury-white/80">hello@luxe.com</span>
+                <span className="text-luxury-white/80">vhwearerscustomer@gmail.com</span>
               </div>
             </div>
           </div>
@@ -69,33 +102,21 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-gold">Company</h4>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href}
-                    className="text-luxury-white/80 hover:text-gold transition-colors duration-200"
-                  >
+              {footerLinks.company.map(link => <li key={link.name}>
+                  <a href={link.href} className="text-luxury-white/80 hover:text-gold transition-colors duration-200">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
           {/* Shop Links */}
-          <div>
+          <div className="">
             <h4 className="text-lg font-semibold mb-4 text-gold">Shop</h4>
             <ul className="space-y-2">
-              {footerLinks.shop.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href}
-                    className="text-luxury-white/80 hover:text-gold transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
+              {footerLinks.shop.map(link => <li key={link.name}>
+                  
+                </li>)}
             </ul>
           </div>
 
@@ -103,16 +124,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-gold">Support</h4>
             <ul className="space-y-2">
-              {footerLinks.support.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href}
-                    className="text-luxury-white/80 hover:text-gold transition-colors duration-200"
-                  >
+              {footerLinks.support.map(link => <li key={link.name}>
+                  <a href={link.href} className="text-luxury-white/80 hover:text-gold transition-colors duration-200">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -120,16 +136,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-gold">Legal</h4>
             <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.href}
-                    className="text-luxury-white/80 hover:text-gold transition-colors duration-200"
-                  >
+              {footerLinks.legal.map(link => <li key={link.name}>
+                  <a href={link.href} className="text-luxury-white/80 hover:text-gold transition-colors duration-200">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -147,22 +158,13 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-luxury-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-luxury-black transition-all duration-200 group"
-                >
+              {socialLinks.map(social => <a key={social.label} href={social.href} aria-label={social.label} className="w-10 h-10 bg-luxury-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-luxury-black transition-all duration-200 group">
                   <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+                </a>)}
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

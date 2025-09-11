@@ -90,13 +90,42 @@
     @apply border-border;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-inter antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    position: relative;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair;
+  }
+
+  /* Mobile-first responsive improvements */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure proper touch targets on mobile */
+  button, a, input, select, textarea {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Fix iOS viewport bug */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      min-height: -webkit-fill-available;
+    }
   }
 }
 
@@ -198,12 +227,22 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/* Enhanced mobile compatibility */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-
+  
+  /* Improve text readability on mobile */
   body {
-    @apply bg-background text-foreground;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Better button sizing for touch */
+  button {
+    min-height: 44px;
+    min-width: 44px;
   }
 }

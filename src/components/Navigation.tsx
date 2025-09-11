@@ -34,8 +34,7 @@ const Navigation = () => {
           
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-luxury-brand text-2xl lg:text-3xl">V&H
-wears</h1>
+            <h1 className="text-luxury-brand text-2xl lg:text-3xl font-bold">V&H Wears</h1>
           </div>
 
           {/* Desktop Navigation */}
